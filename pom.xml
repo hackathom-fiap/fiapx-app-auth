@@ -11,7 +11,7 @@
     <groupId>com.fiapx</groupId>
     <artifactId>auth-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>auth-service</name>
+    <name>fiapx-app-auth-service</name>
     <description>Serviço de Autenticação para Hackathon FIAP X</description>
 
     <properties>
