@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:postgres-auth-postgresql.hackathon-db.svc.cluster.local}:5432/auth_db
+    username: ${DB_USER:auth_admin}
+    password: ${DB_PASSWORD:auth_password123}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+    redis:
+      host: ${REDIS_HOST:redis-master.hackathon-redis.svc.cluster.local}
+      port: 6379
+      password: ${REDIS_PASSWORD:admin123}
+
+server:
+  port: 8081
+
+jwt:
+  secret: ${JWT_SECRET:hackathon-secret-key-fiap-x-soat11-java}
+  expiration: 86400000
