@@ -1,0 +1,12 @@
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\application\dto\LoginResponseTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\application\usecase\RegisterUserUseCaseTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\infrastructure\adapter\security\BCryptPasswordEncoderAdapterTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\application\usecase\LoginUserUseCaseTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\application\dto\LoginRequestTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\infrastructure\adapter\security\JwtTokenAdapterTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\domain\entity\UserTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\infrastructure\adapter\web\TestSecurityConfig.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\infrastructure\adapter\web\AuthControllerTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\application\dto\UserRegistrationRequestTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\infrastructure\adapter\persistence\entity\UserEntityTest.java
+C:\Users\Denise Ferreira\FIAP\workspace\fiapx-app-auth\src\test\java\com\fiapx\auth\infrastructure\adapter\persistence\UserPersistenceAdapterTest.java

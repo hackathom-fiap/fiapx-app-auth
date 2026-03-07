@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserPersistenceAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">auth-service</a> &gt; <a href="index.source.html" class="el_package">com.fiapx.auth.infrastructure.adapter.persistence</a> &gt; <span class="el_source">UserPersistenceAdapter.java</span></div><h1>UserPersistenceAdapter.java</h1><pre class="source lang-java linenums">package com.fiapx.auth.infrastructure.adapter.persistence;
+
+import com.fiapx.auth.domain.entity.User;
+import com.fiapx.auth.domain.repository.UserRepository;
+import com.fiapx.auth.infrastructure.adapter.persistence.entity.UserEntity;
+import com.fiapx.auth.infrastructure.adapter.persistence.repository.JpaUserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.Optional;
+
+@Component
+<span class="fc" id="L13">@RequiredArgsConstructor</span>
+public class UserPersistenceAdapter implements UserRepository {
+
+    private final JpaUserRepository jpaRepository;
+
+    @Override
+    public User save(User user) {
+<span class="fc" id="L20">        UserEntity entity = UserEntity.builder()</span>
+<span class="fc" id="L21">                .id(user.getId())</span>
+<span class="fc" id="L22">                .username(user.getUsername())</span>
+<span class="fc" id="L23">                .email(user.getEmail())</span>
+<span class="fc" id="L24">                .password(user.getPassword())</span>
+<span class="fc" id="L25">                .build();</span>
+<span class="fc" id="L26">        UserEntity saved = jpaRepository.save(entity);</span>
+<span class="fc" id="L27">        return mapToDomain(saved);</span>
+    }
+
+    @Override
+    public Optional&lt;User&gt; findByUsername(String username) {
+<span class="fc" id="L32">        return jpaRepository.findByUsername(username).map(this::mapToDomain);</span>
+    }
+
+    @Override
+    public Optional&lt;User&gt; findByEmail(String email) {
+<span class="fc" id="L37">        return jpaRepository.findByEmail(email).map(this::mapToDomain);</span>
+    }
+
+    @Override
+    public boolean existsByUsername(String username) {
+<span class="fc" id="L42">        return jpaRepository.existsByUsername(username);</span>
+    }
+
+    @Override
+    public boolean existsByEmail(String email) {
+<span class="fc" id="L47">        return jpaRepository.existsByEmail(email);</span>
+    }
+
+    private User mapToDomain(UserEntity entity) {
+<span class="fc" id="L51">        return User.builder()</span>
+<span class="fc" id="L52">                .id(entity.getId())</span>
+<span class="fc" id="L53">                .username(entity.getUsername())</span>
+<span class="fc" id="L54">                .email(entity.getEmail())</span>
+<span class="fc" id="L55">                .password(entity.getPassword())</span>
+<span class="fc" id="L56">                .build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,12 @@
+com\fiapx\auth\domain\entity\UserTest.class
+com\fiapx\auth\application\dto\LoginRequestTest.class
+com\fiapx\auth\infrastructure\adapter\persistence\UserPersistenceAdapterTest.class
+com\fiapx\auth\infrastructure\adapter\web\TestSecurityConfig.class
+com\fiapx\auth\infrastructure\adapter\security\JwtTokenAdapterTest.class
+com\fiapx\auth\application\dto\UserRegistrationRequestTest.class
+com\fiapx\auth\application\usecase\RegisterUserUseCaseTest.class
+com\fiapx\auth\infrastructure\adapter\web\AuthControllerTest.class
+com\fiapx\auth\application\dto\LoginResponseTest.class
+com\fiapx\auth\infrastructure\adapter\persistence\entity\UserEntityTest.class
+com\fiapx\auth\infrastructure\adapter\security\BCryptPasswordEncoderAdapterTest.class
+com\fiapx\auth\application\usecase\LoginUserUseCaseTest.class
