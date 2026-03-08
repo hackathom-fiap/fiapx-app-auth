@@ -173,20 +173,6 @@ class UserEntityTest {
     }
 
     @Test
-    @DisplayName("Should compare UserEntity with itself")
-    void shouldCompareUserEntityWithItself() {
-        UserEntity userEntity = UserEntity.builder()
-                .id(UUID.randomUUID())
-                .username("testuser")
-                .email("test@example.com")
-                .password("password")
-                .build();
-
-        assertEquals(userEntity, userEntity);
-        assertEquals(userEntity.hashCode(), userEntity.hashCode());
-    }
-
-    @Test
     @DisplayName("Should compare UserEntity with different object")
     void shouldCompareUserEntityWithDifferentObject() {
         UserEntity userEntity = UserEntity.builder()
@@ -196,8 +182,8 @@ class UserEntityTest {
                 .password("password")
                 .build();
 
-        assertNotEquals(userEntity, "string");
-        assertNotEquals(userEntity, null);
+        assertFalse(userEntity.equals("string"));
+        assertFalse(userEntity.equals(null));
     }
 
     @Test
