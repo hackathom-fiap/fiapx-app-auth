@@ -10,9 +10,12 @@ spring:
     show-sql: true
   data:
     redis:
-      host: ${REDIS_HOST:redis-master.hackathon-redis.svc.cluster.local}
-      port: 6379
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      username: ${REDIS_USER:default}
       password: ${REDIS_PASSWORD:admin123}
+      ssl:
+        enabled: true
 
 server:
   port: 8081
