@@ -11,6 +11,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Map<String, String>> handleRuntimeException(RuntimeException ex) {
-        return ResponseEntity.status(400).body(Map.of("error", ex.getMessage()));
+        String message = ex.getMessage() != null ? ex.getMessage() : "Unknown error";
+        return ResponseEntity.status(400).body(Map.of("error", message));
     }
 }
