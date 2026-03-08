@@ -4,6 +4,9 @@ metadata:
   name: auth-config
   namespace: hackathon-auth
 data:
-  DB_HOST: "postgres-postgresql.hackathon-db.svc.cluster.local"
-  DB_USER: "admin"
-  REDIS_HOST: "redis-master.hackathon-redis.svc.cluster.local"
+  DB_HOST: "soat-postgres-db.cszqygoyua1z.us-east-1.rds.amazonaws.com"
+  DB_USER: "postgresadmin"
+  DB_NAME: "auth-db"
+  REDIS_HOST: "master.fiapx-redis-replication-group.jx4c0w.use1.cache.amazonaws.com"
+  REDIS_PORT: "6379"
+  REDIS_USER: "default"
