@@ -13,9 +13,10 @@ spec:
       labels:
         app: auth-service
     spec:
+      serviceAccountName: auth-service-account
       containers:
       - name: auth-service
-        image: 239409137076.dkr.ecr.us-east-1.amazonaws.com/auth:latest
+        image: 239409137076.dkr.ecr.us-east-1.amazonaws.com/auth:TAG
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8081
