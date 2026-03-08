@@ -1,6 +1,5 @@
 package com.fiapx.auth.domain.entity;
 
-import com.fiapx.auth.domain.entity.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 

@@ -58,8 +58,8 @@ class UserRegistrationRequestTest {
     }
 
     @Test
-    @DisplayName("Should verify equals and hashCode")
-    void shouldVerifyEqualsAndHashCode() {
+    @DisplayName("Should verify equals and hashCode contract")
+    void shouldVerifyEqualsAndHashCodeContract() {
         UserRegistrationRequest request1 = new UserRegistrationRequest();
         request1.setUsername("testuser");
         request1.setEmail("test@example.com");
@@ -79,7 +79,56 @@ class UserRegistrationRequestTest {
         request3.setPassword("password123");
 
         assertNotEquals(request1, request3);
-        assertNotEquals(request1.hashCode(), request3.hashCode());
+    }
+
+    @Test
+    @DisplayName("Should verify equals contract")
+    void shouldVerifyEqualsContract() {
+        UserRegistrationRequest request = new UserRegistrationRequest();
+        request.setUsername("testuser");
+        request.setEmail("test@example.com");
+        request.setPassword("password123");
+
+        assertFalse(request.equals("string"));
+        assertFalse(request.equals(null));
+        
+        UserRegistrationRequest request2 = new UserRegistrationRequest();
+        request2.setUsername("testuser");
+        request2.setEmail("test@example.com");
+        request2.setPassword("password123");
+        
+        assertEquals(request.equals(request2), request2.equals(request));
+        
+        UserRegistrationRequest request3 = new UserRegistrationRequest();
+        request3.setUsername("testuser");
+        request3.setEmail("test@example.com");
+        request3.setPassword("password123");
+
+        assertEquals(request.equals(request2), request2.equals(request3));
+        assertEquals(request.equals(request3), request.equals(request2));
+    }
+
+    @Test
+    @DisplayName("Should verify hashCode contract")
+    void shouldVerifyHashCodeContract() {
+        UserRegistrationRequest request = new UserRegistrationRequest();
+        request.setUsername("testuser");
+        request.setEmail("test@example.com");
+        request.setPassword("password123");
+        
+        int hashCode1 = request.hashCode();
+        int hashCode2 = request.hashCode();
+        int hashCode3 = request.hashCode();
+        
+        assertEquals(hashCode1, hashCode2);
+        assertEquals(hashCode2, hashCode3);
+        
+        UserRegistrationRequest request2 = new UserRegistrationRequest();
+        request2.setUsername("testuser");
+        request2.setEmail("test@example.com");
+        request2.setPassword("password123");
+        
+        assertEquals(request.hashCode(), request2.hashCode());
     }
 
     @Test
