@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${DB_HOST:postgres-auth-postgresql.hackathon-db.svc.cluster.local}:5432/auth_db
-    username: ${DB_USER:auth_admin}
-    password: ${DB_PASSWORD:auth_password123}
+    url: jdbc:postgresql://${DB_HOST}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -10,9 +10,12 @@ spring:
     show-sql: true
   data:
     redis:
-      host: ${REDIS_HOST:redis-master.hackathon-redis.svc.cluster.local}
-      port: 6379
-      password: ${REDIS_PASSWORD:admin123}
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      username: ${REDIS_USER}
+      password: ${REDIS_PASSWORD}
+      ssl:
+        enabled: true
 
 server:
   port: 8081
